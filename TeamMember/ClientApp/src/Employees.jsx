@@ -1,35 +1,10 @@
-﻿import { useState } from 'react';
+﻿
 import femaleProfile from './Images/femaleProfile.jpg';
 import maleProfile from './Images/maleProfile.jpg';
 
 //use State hook
 
-const Employees = () => {
-
-    const [employees, setEmployees] = useState([
-        { id: 1, fullname: "A B", destination: "AA", gender: "m", teamName: "TA" },
-        { id: 2, fullname: "C D", destination: "BB", gender: "m", teamName: "TB" },
-        { id: 3, fullname: "E R", destination: "CC", gender: "f", teamName: "TB" },
-        { id: 4, fullname: "F G", destination: "DD", gender: "m", teamName: "TA" },
-        { id: 5, fullname: "H I", destination: "CC", gender: "f", teamName: "TB" },
-        { id: 6, fullname: "J K", destination: "AA", gender: "f", teamName: "TA" }
-    ]);
-
-    const [SelectedTeam, setTeam] = useState("TB");
-
-    function handleTeamSelectionChange(event) {
-        console.log(event.target.value);
-        setTeam(event.target.value);
-    }
-
-    function handleEmployeeClick(event) {
-        const transformedArray = employees.map((employee) => employee.id === parseInt(event.currentTarget.id) ?
-            (employee.TeamName === SelectedTeam) ?
-                { ...employee, TeamName: '' } : { ...employee, teamName: SelectedTeam }
-            : employee);
-
-        setEmployees(transformedArray);
-    }
+const Employees = ({ employees, SelectedTeam, handleTeamSelectionChange, handleEmployeeClick }) => {
 
     return (
         <main className="container"> 
