@@ -22,7 +22,7 @@ const Employees = ({ employees, SelectedTeam, handleTeamSelectionChange, handleE
                     <div className="card-collection">
                         {
                             employees.map((employee) => (
-                                <div id={employee.id} className={(employee.teamName === SelectedTeam ? "card m-2 standout" : "card m-2")} style = {{ cursor: "pointer" }}>
+                                <div id={employee.id} key={employee.id} onClick={handleEmployeeClick} className={(employee.teamName === SelectedTeam ? "card m-2 standout" : "card m-2")} style={{ cursor: "pointer" }}>
 
                                     {(employee.gender === "m") ? < img src={maleProfile} className="card-img-top" />
                                                                : < img src={femaleProfile} className="card-img-top" />}
