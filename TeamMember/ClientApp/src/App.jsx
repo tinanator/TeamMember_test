@@ -63,7 +63,10 @@ function App() {
                         handleEmployeeClick={handleEmployeeClick} />}>
 
                     </Route>
-                    <Route path="/GroupedTeamMembers" element={<GroupedTeamMembers/>}></Route>
+                    <Route path="/GroupedTeamMembers" element={<GroupedTeamMembers
+                        employees={employees}
+                        selectedTeam={SelectedTeam}
+                        setTeam={setTeam} />}></Route>
                     <Route path="*" element={<NotFound />}></Route>
 
                 </Routes>
