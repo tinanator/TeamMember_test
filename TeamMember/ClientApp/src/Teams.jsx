@@ -1,5 +1,8 @@
-﻿
-const Teams = ({ handleTeamSelectionChange, selectedTeam }) => {
+﻿import { useContext } from 'react';
+import ContextData from './ContextData';
+
+const Teams = () => {
+    const { handleTeamSelectionChange, selectedTeam } = useContext(ContextData);
 
     return (
         <select className="form-select form-select-lg" id="teams" value={selectedTeam} onChange={handleTeamSelectionChange}>

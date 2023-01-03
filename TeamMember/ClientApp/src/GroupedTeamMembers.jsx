@@ -1,6 +1,9 @@
-﻿import { useState } from 'react';
+﻿import { useState, useContext } from 'react';
+import DataContext from './ContextData';
 
-const GroupedTeamMembers = ({ employees, selectedTeam, setTeam }) => {
+const GroupedTeamMembers = () => {
+
+    const { employees, selectedTeam, setTeam } = useContext(DataContext);
 
     const [groupedEmployees, setGroupedData] = useState(groupTeamMembers());
 
@@ -58,9 +61,9 @@ const GroupedTeamMembers = ({ employees, selectedTeam, setTeam }) => {
                                                 </h5>
                                                 <p>Destination: { member.destination }</p>
                                             </div>    
-                                        );
+                                        )
                                     })
-                                };
+                                }
                             </div>    
                         </div>    
                     )

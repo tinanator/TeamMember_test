@@ -1,4 +1,10 @@
-﻿const Header = ({ SelectedTeam, teamNumberCount }) => {
+﻿import ContextData from './ContextData';
+import { useContext } from 'react';
+
+const Header = () => {
+
+    const { SelectedTeam, teamNumberCount } = useContext(ContextData);
+
     return (
         <header className="container">
             <div className="row justify-content-center mt-3 mb-4">

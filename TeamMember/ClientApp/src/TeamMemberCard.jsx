@@ -1,7 +1,12 @@
 ﻿import femaleProfile from './Images/femaleProfile.jpg';
 import maleProfile from './Images/maleProfile.jpg';
+import ContextData from './ContextData';
+import { useContext } from 'react';
 
-const TeamMemberCard = ({ employee, SelectedTeam, handleEmployeeClick }) => {
+const TeamMemberCard = ({ employee }) => {
+
+    const { SelectedTeam, handleEmployeeClick } = useContext(ContextData);
+
     return (
         <div id={employee.id} key={employee.id} onClick={handleEmployeeClick} className={(employee.teamName === SelectedTeam ? "card m-2 standout" : "card m-2")} style={{ cursor: "pointer" }}>
 
